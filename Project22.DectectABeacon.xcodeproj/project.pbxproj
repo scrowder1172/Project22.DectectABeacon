@@ -12,6 +12,7 @@
 		524C8F552C0E31D000C01055 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524C8F542C0E31D000C01055 /* ViewController.swift */; };
 		524C8F5A2C0E31D100C01055 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 524C8F592C0E31D100C01055 /* Assets.xcassets */; };
 		52CDA4452C0E335800CF2AB0 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CDA4442C0E335800CF2AB0 /* MainVC.swift */; };
+		52CDA4472C0E363A00CF2AB0 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52CDA4462C0E363A00CF2AB0 /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		524C8F592C0E31D100C01055 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		524C8F5E2C0E31D100C01055 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52CDA4442C0E335800CF2AB0 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		52CDA4462C0E363A00CF2AB0 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				52CDA4442C0E335800CF2AB0 /* MainVC.swift */,
 				524C8F592C0E31D100C01055 /* Assets.xcassets */,
 				524C8F5E2C0E31D100C01055 /* Info.plist */,
+				52CDA4462C0E363A00CF2AB0 /* Launch Screen.storyboard */,
 			);
 			path = Project22.DectectABeacon;
 			sourceTree = "<group>";
@@ -122,6 +125,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52CDA4472C0E363A00CF2AB0 /* Launch Screen.storyboard in Resources */,
 				524C8F5A2C0E31D100C01055 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,9 +276,12 @@
 				DEVELOPMENT_TEAM = L97JMB29U2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Project22.DectectABeacon/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Detect Beacon";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We want to help you find your nearest store";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "We want to help you find your nearest store";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -300,9 +307,12 @@
 				DEVELOPMENT_TEAM = L97JMB29U2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Project22.DectectABeacon/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Detect Beacon";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We want to help you find your nearest store";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "We want to help you find your nearest store";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
