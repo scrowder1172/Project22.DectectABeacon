@@ -9,7 +9,7 @@ import CoreLocation
 import UIKit
 
 enum DistanceToBeacon {
-    case near, far, unknown
+    case far, immediate, near, unknown
 }
 
 class MainVC: UIViewController {
@@ -32,11 +32,17 @@ class MainVC: UIViewController {
     private func changeBackgroundColor(beaconDistance: DistanceToBeacon = .unknown) {
         switch beaconDistance {
         case .near:
-            view.backgroundColor = .red
+            view.backgroundColor = .orange
+            distanceReading.text = "NEAR"
         case .far:
-            view.backgroundColor = .yellow
-        case .unknown:
+            view.backgroundColor = .blue
+            distanceReading.text = "FAR"
+        case .immediate:
+            view.backgroundColor = .red
+            distanceReading.text = "RIGHT HERE"
+        default:
             view.backgroundColor = .gray
+            distanceReading.text = "UNKNOWN"
         }
     }
     
@@ -54,6 +60,32 @@ class MainVC: UIViewController {
         ])
         
     }
+    
+    private func startScanning() {
+        guard let uuid = UUID(uuidString: "5A4BCFCE-174E-4BAC-A814-092E77F6B7E5") else { return }
+        
+//        let beaconRegion = CLBeaconRegion(uuid: uuid, major: 123, minor: 456, identifier: "MyBeacon")
+//        locationManager?.startMonitoring(for: beaconRegion)
+//        locationManager?.startRangingBeacons(satisfying: beaconRegion)
+        
+        let beaconIdentity = CLBeaconIdentityConstraint(uuid: uuid, major: 123, minor: 456)
+        locationManager?.startRangingBeacons(satisfying: beaconIdentity)
+    }
+    
+    private func update(distance: CLProximity) {
+        UIView.animate(withDuration: 1) {
+            switch distance {
+            case .far:
+                self.changeBackgroundColor(beaconDistance: .far)
+            case .near:
+                self.changeBackgroundColor(beaconDistance: .near)
+            case .immediate:
+                self.changeBackgroundColor(beaconDistance: .immediate)
+            default:
+                self.changeBackgroundColor(beaconDistance: .unknown)
+            }
+        }
+    }
 }
 
 extension MainVC: CLLocationManagerDelegate {
@@ -62,8 +94,17 @@ extension MainVC: CLLocationManagerDelegate {
             if CLLocationManager.isMonitoringAvailable(for: CLBeaconRegion.self) {
                 if CLLocationManager.isRangingAvailable() {
                     // do stuff
+                    startScanning()
                 }
             }
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didRange beacons: [CLBeacon], satisfying beaconConstraint: CLBeaconIdentityConstraint) {
+        if let beacon = beacons.first {
+            update(distance: beacon.proximity)
+        } else {
+            update(distance: .unknown)
         }
     }
 }
